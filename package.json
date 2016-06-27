@@ -1,0 +1,14 @@
+{
+  "name": "sourci",
+  "version": "0.0.1",
+  "description": "This is a trial website to test my nodeJS, bootstrap, SQL and HTML Skills",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Draper",
+  "license": "ISC",
+  "keywords": [
+    "negotiation"
+  ]
+}

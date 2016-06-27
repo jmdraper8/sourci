@@ -10,5 +10,9 @@
   "license": "ISC",
   "keywords": [
     "negotiation"
-  ]
+  ],
+  "dependencies": {
+    "express": "^4.13.3",
+    "socket.io": "^1.3.7"
+  }
 }

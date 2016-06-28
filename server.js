@@ -12,7 +12,7 @@ var middleware = require('./middleware.js')(db);
 var todos = [];
 var todoNextId = 1;
 
-app.use(bodyParser.json());
+app.use(bodyParser());
 
 
 app.use(express.static(__dirname + '/public'));
@@ -20,12 +20,11 @@ app.use(express.static(__dirname + '/public'));
 //POST /users/
 app.post('/register', function (req, res) {
 
-	console.log("register users");
+	console.log(req.body);
 
-	var body = _.pick(req.body, 'email', 'password');
+	// var body = _.pick(req.body, 'userName');
 
-	console.log(body);
-	res.status(400).json(e);
+	// console.log(body);
 
 	// db.user.create(body).then(function (users) {
 	// 	res.json(users.toPublicJSON());
@@ -34,6 +33,14 @@ app.post('/register', function (req, res) {
 	// });
 
 });
+
+
+// app.post('/res', function(req, res){
+//   var userName = req.body.userName;
+//   var html = 'Hello: ' + userName + '.<br>' +
+//              '<a href="/">Try again.</a>';
+//   res.send(html);
+// });
 
 db.sequelize.sync({force: true}).then(function () {
 	app.listen(PORT, function () {

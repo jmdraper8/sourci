@@ -9,10 +9,11 @@
   <body>
     <p>Hello World!</p>
 
-    <script>
-    var link = document.querySelector('link[rel=import]');
-    var content = link.import.querySelector('#blog-post');
-    document.body.appendChild(document.importNode(content, true));
-  </script>
+  <form action="/res" method="post">
+               </p>Enter your name:</p>
+               <input type="text" name="userName" placeholder="..." />
+               <br>
+               <button type="submit">Submit</button>
+  </form>
   </body>
 </html>  

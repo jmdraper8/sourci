@@ -21,7 +21,7 @@ A user will enter their relevant information and submit, the following **Actions
 * Role
 * Organisation
 * Country (List)
-* Region
 * Action - New Organisation, Add User (Dropdown)
 * Phone Number
+* Notes
 

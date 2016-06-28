@@ -16,3 +16,11 @@ Changes Added
 v_0.0.2
 -------
 * Added login page
+
+
+
+Technical Debt Items
+--------------------
+* Create import for header in html file, mainly for favicon
+* create environment variables for logo and header
+* 

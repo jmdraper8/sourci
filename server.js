@@ -22,7 +22,10 @@ app.post('/register', function (req, res) {
 
 	console.log("register users");
 
-	// var body = _.pick(req.body, 'email', 'password');
+	var body = _.pick(req.body, 'email', 'password');
+
+	console.log(body);
+	res.status(400).json(e);
 
 	// db.user.create(body).then(function (users) {
 	// 	res.json(users.toPublicJSON());

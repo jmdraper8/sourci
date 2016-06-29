@@ -20,11 +20,20 @@ app.use(express.static(__dirname + '/public'));
 //POST /users/
 app.post('/register', function (req, res) {
 
-	console.log(req.body);
+	// console.log(req.body.email);
 
-	// var body = _.pick(req.body, 'userName');
+	var body = _.pick(req.body, 'email', 'password', 'title', 'firstName', 'lastName', 'role',
+					'organisation', 'country', 'city', 'action', 'phoneNumber', 'notes');
 
-	// console.log(body);
+	console.log(body);
+
+	if (body.action === 'New Organisation') {
+		console.log('New Organisation');
+	} else if (body.action === 'Add User') {
+		console.log('Add User');
+	} else {
+		res.status(400).json({Error: 'Error'});
+	}
 
 	// db.user.create(body).then(function (users) {
 	// 	res.json(users.toPublicJSON());

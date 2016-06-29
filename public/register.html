@@ -79,7 +79,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="container-fluid vertical-center">
+		<div class="container-fluid vertical-center marginTop">
 			<section class="container well">
 				<div class="container-page">
 					<div class="col-md-8">
@@ -94,7 +94,7 @@
 									<span class="input-group-addon" id="basic-addon1">
 										<i class="glyphicon glyphicon-envelope"></i>
 									</span>
-									<input type="email" name="email" placeholder="example@example.com" class="form-control" id="" value="" />
+									<input type="email" name="email" placeholder="example@example.com" class="form-control" id="email" value="" />
 								</div>
 							</div>
 							
@@ -104,7 +104,7 @@
 									<span class="input-group-addon" id="basic-addon1">
 										<i class="glyphicon glyphicon-envelope"></i>
 									</span>
-									<input type="email" name="emailVerify" placeholder="example@example.com" class="form-control" id="" value="" />
+									<input type="email" name="emailVerify" placeholder="example@example.com" class="form-control" id="emailVerify" value="" />
 								</div>
 							</div>
 							<div class="form-group col-lg-6">
@@ -113,17 +113,17 @@
 									<span class="input-group-addon" id="basic-addon1">
 										<i class="glyphicon glyphicon-lock"></i>
 									</span>
-									<input type="password" name="password" class="form-control" id="" value="" />
+									<input type="password" name="password" class="form-control has-success" id="password" value="" />
 								</div>
 							</div>
 							
-							<div class="form-group col-lg-6">
+							<div class="form-group col-lg-6" id="passwordSuccess">
 								<label>Repeat Password</label>
 								<div class="input-group">
 									<span class="input-group-addon" id="basic-addon1">
 										<i class="glyphicon glyphicon-lock"></i>
 									</span>
-									<input type="password" name="passwordVerify" class="form-control" id="" value="" />
+									<input type="password" name="passwordVerify" class="form-control" id="passwordVerify" value="" />
 								</div>
 							</div>
 							
@@ -492,5 +492,9 @@
 				</div>
 			</section>
 		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="bootstrap/js/checkForm.js"></script>
+		<script src="bootstrap/js/checkPassword.js"></script>
 	</body>
 </html>

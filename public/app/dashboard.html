@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<!-- Title -->
+		<title>Sourci App</title>
+		
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="/images/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/images/favicon/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
+
+		<!-- Bootstrap core CSS -->
+		<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="/bootstrap/css/styles.css" rel="stylesheet" />
+
+		<meta name="theme-color" content="#ffffff">    <meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a href="/"><img src="../images/inverse_logo.png" id="title" alt="Title & Logo" height="30"></a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="dashboard.html">Dashboard</a></li>
+						<li><a href="#div2">Forward eNegotiations</a></li>
+						<li><a href="#div3">Reverse eNegotiations</a></li>
+						<li><a href="#div3">eRFX</a></li>
+						<li class="dropdown">
+							<a href="div4" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Market Settings</a></li>
+								<li><a href="#">User Settings</a></li>
+								<li><a href="#">Group Settings</a></li>
+								<li><a href="#">Product Settings</a></li>
+								<li><a href="#">Region Settings</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-right" action="/logout">
+						<input type="submit" name="logout" value="Logout" class="btn btn-danger marginRight" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="dashboard-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 well">
+						<h2 class="text-right">Dashboard</h2>
+						
+						<form action="./login" method="post">
+							<div class="form-group">
+								<label>User Name</label>
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">
+										<i class="glyphicon glyphicon-user"></i>
+									</span>
+									<input type="email" name="email" class="form-control"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Password</label>
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">
+										<i class="glyphicon glyphicon-lock"></i>
+									</span>
+									<input type="password" name="password" class="form-control"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<input type="submit" class="btn btn-success" value="Login"/>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /container -->
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="/bootstrap/js/bootstrap.min.js"></script>
+
+	</body>
+</html>

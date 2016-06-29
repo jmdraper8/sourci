@@ -1,29 +1,27 @@
-var email = document.getElementById("email")
-  , emailVerify = document.getElementById("emailVerify");
+var password = document.getElementById("password")
+  , confirm_password = document.getElementById("passwordVerify")
+  , email = document.getElementById("email")
+  , confirm_email = document.getElementById("emailVerify");
 
- var password = document.getElementById("password")
-  , passwordVerify = document.getElementById("passwordVerify");
+function validateForm(){
 
+  if (password.value != confirm_password.value || email.value != confirm_email.value) {
+  	console.log('no match');
+  	if (password.value != confirm_password.value) {
+  		confirm_password.setCustomValidity("Passwords Don't Match");
+  	}
+    if (email.value != confirm_email.value) {
+    	confirm_email.setCustomValidity("Emails Don't Match");    	
+    }
 
-
-function validatePassword(){
-
-  if (email.value == emailVerify.value && password.value == passwordVerify.value) {
-	   emailVerify.setCustomValidity('');
-  } else if (email.value == emailVerify.value) {
-  	document.getElementById('passwordSuccess').classList.add('has-success');
-  }
-  else {
-	if(email.value != emailVerify.value) {
-		emailVerify.setCustomValidity("Emails Don't Match");
-	}
-	if (password.value != passwordVerify.value) {
-		passwordVerify.setCustomValidity("Passwords Don't Match");
-	}
+  } else if (password.value == confirm_password.value && email.value == confirm_email.value) {
+  	console.log('Both Match');
+    confirm_password.setCustomValidity('');
+    confirm_email.setCustomValidity('');
   }
 }
 
-email.onchange = validatePassword;
-emailVerify.onkeyup = validatePassword;
-password.onkeyup = validatePassword;
-passwordVerify.onkeyup = validatePassword;
+email.onchange = validateForm;
+confirm_email.onkeyup = validateForm
+password.onchange = validateForm;
+confirm_password.onkeyup = validateForm;

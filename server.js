@@ -35,11 +35,11 @@ app.post('/register', function (req, res) {
 		res.status(400).json({Error: 'Error'});
 	}
 
-	// db.user.create(body).then(function (users) {
-	// 	res.json(users.toPublicJSON());
-	// }, function (e) {
-	// 	res.status(400).json(e);
-	// });
+	db.user.create(body).then(function (users) {
+		res.json(users.toPublicJSON());
+	}, function (e) {
+		res.status(400).json(e);
+	});
 
 });
 

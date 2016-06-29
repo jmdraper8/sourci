@@ -26,7 +26,8 @@ module.exports = function (sequelize, DataTypes) {
 
 			// Password must contain at least one letter, at least one number,
 			// and be longer than six charaters.
-				is: /^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$/i
+				len: [7, 100]
+			// is: /^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$/i
 			},
 			set: function (value) {
 				var salt = bcrypt.genSaltSync(10);
@@ -61,12 +62,18 @@ module.exports = function (sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
+		action: {
+			type:DataTypes.STRING
+		},
 		phoneNumber: {
 			type: DataTypes.STRING,
-			allowNull: false,
-			validate: {
-				isNumeric: true
-			}
+			allowNull: false
+		},
+		notes: {
+			type: DataTypes.STRING
+		},
+		active: {
+			type: DataTypes.BOOLEAN
 		}
 	}, {
 		hooks: {

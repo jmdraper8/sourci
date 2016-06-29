@@ -44,19 +44,31 @@ module.exports = function (sequelize, DataTypes) {
 		},
 		firstName: {
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: false,
+			validate: {
+				len: [1, 25]
+			}
 		},
 		lastName: {
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: false,
+			validate: {
+				len: [1, 25]
+			}
 		},
 		role: {
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: false,
+			validate: {
+				len: [1, 25]
+			}
 		},
 		organisation: {
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: false,
+			validate: {
+				len: [1, 25]
+			}
 		},
 		country: {
 			type: DataTypes.STRING,
@@ -67,7 +79,10 @@ module.exports = function (sequelize, DataTypes) {
 		},
 		phoneNumber: {
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: false,
+			validate: {
+				len: [1, 25]
+			}
 		},
 		notes: {
 			type: DataTypes.STRING

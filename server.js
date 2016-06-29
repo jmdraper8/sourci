@@ -17,41 +17,54 @@ app.use(bodyParser());
 
 app.use(express.static(__dirname + '/public'));
 
+
+app.use(function(err, req, res, next) {
+  //do logging and user-friendly error message display
+  res.redirect('/public/500.html');
+})
+
 //POST /users/
 app.post('/register', function (req, res) {
-
-	// console.log(req.body.email);
 
 	var body = _.pick(req.body, 'email', 'password', 'title', 'firstName', 'lastName', 'role',
 					'organisation', 'country', 'city', 'action', 'phoneNumber', 'notes');
 
-	console.log(body);
-
-	if (body.action === 'New Organisation') {
-		console.log('New Organisation');
-	} else if (body.action === 'Add User') {
-		console.log('Add User');
-	} else {
-		res.status(400).json({Error: 'Error'});
-	}
-
 	db.user.create(body).then(function (users) {
-		res.json(users.toPublicJSON());
+		console.log('User succesfully registred');
+		res.redirect('/register.html');
+		//res.json(users.toPublicJSON());
 	}, function (e) {
+		console.log(e.errors.length);
 		res.status(400).json(e);
 	});
 
 });
 
+//POST /users/login
+app.post('/login', function (req, res) {
 
-// app.post('/res', function(req, res){
-//   var userName = req.body.userName;
-//   var html = 'Hello: ' + userName + '.<br>' +
-//              '<a href="/">Try again.</a>';
-//   res.send(html);
-// });
+	var body = _.pick(req.body, 'email', 'password');
+	var userInstance;
 
-db.sequelize.sync({force: true}).then(function () {
+	db.user.authenticate(body).then(function (user) {
+		var token = user.generateToken('authentication');
+		//console.log(token);
+		userInstance = user;
+
+		return db.token.create({
+			token: token
+		});
+
+	}).then(function (tokenInstance) {
+		res.header('Auth', tokenInstance.get('token')).json(userInstance.toPublicJSON());
+	}).catch(function () {
+		res.status(401).send();
+	});
+
+});
+
+
+db.sequelize.sync().then(function () {
 	app.listen(PORT, function () {
 	console.log('Server started on port: ' + PORT);
 	});

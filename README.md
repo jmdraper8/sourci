@@ -17,6 +17,9 @@ v_0.0.2
 -------
 * Added login page
 
+v_0.0.3
+-------
+* Added dashboard initial file and frame
 
 
 Technical Debt Items

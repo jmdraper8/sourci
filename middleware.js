@@ -3,7 +3,9 @@ var cryptojs = require('crypto-js');
 module.exports = function (db) {
 	return {
 		requireAuthentication: function (req, res, next) {
-			var token = req.get('Auth') || '';
+			var token = req.session.token || '';
+			console.log('3: ' + token);
+			console.log('4: ' + req.session.id);
 
 			db.token.findOne({
 				where: {
@@ -15,6 +17,7 @@ module.exports = function (db) {
 				}
 
 				req.token = tokenInstance;
+				console.log(req.token);
 				return db.user.findByToken(token);
 			}).then(function (user) {
 				req.user = user;

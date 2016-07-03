@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
 	return sequelize.define('token', {
 		tokenHash: DataTypes.STRING,
 		token: {
-			type: DataTypes.VIRTUAL,
+			type: DataTypes.STRING,
 			allowNull: false,
 			validate: {
 				len: [1]
